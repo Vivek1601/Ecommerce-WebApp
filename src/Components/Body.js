@@ -29,7 +29,7 @@ const Body = () => {
     ) : (
   <div>
           <div className="m-auto w-4/5 flex flex-wrap gap-6 justify-between">
-            {products.length == 0 ? (
+            {products.length === 0 ? (
               <p className="text-center w-full text-3xl">
                 No products found...
               </p>

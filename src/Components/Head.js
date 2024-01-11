@@ -2,7 +2,7 @@ import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
 import cart_img from "../img/shopping_cart_FILL0_wght400_GRAD0_opsz24.png";
 import wishlist_img from "../img/favorite_FILL0_wght400_GRAD0_opsz24.png";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import account_img from "../img/person_FILL0_wght400_GRAD0_opsz24.png";
 
  const Head = () => {

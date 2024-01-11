@@ -14,7 +14,7 @@ const FilterInfoSilver = () => {
       setCurrPage(page);
     };
 
-    const filteredProducts  = products.filter((product) => product?.Details?.Metal == "Silver");
+    const filteredProducts  = products.filter((product) => product?.Details?.Metal === "Silver");
 
     const Page_Size = 6;
     const totalPages = Math.ceil(filteredProducts.length / Page_Size);
@@ -23,7 +23,7 @@ const FilterInfoSilver = () => {
   <div>
   <div>
           <div className="m-auto w-4/5 flex flex-wrap gap-6 justify-between">
-            {products.length == 0 ? (
+            {products.length === 0 ? (
               <p className="text-center w-full text-3xl">
                 No products found...
               </p>

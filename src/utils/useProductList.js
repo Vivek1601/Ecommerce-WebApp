@@ -4,7 +4,7 @@ import { Products } from "../constant";
 const useProductList = () => {
   const [products, setProducts] = useState([]);
   const [actualData, setActualData] = useState([]);
-  const [crouselCards, setCrouselCards] = useState([]);
+  // const [crouselCards, setCrouselCards] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
 

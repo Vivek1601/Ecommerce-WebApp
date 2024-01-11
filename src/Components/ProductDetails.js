@@ -1,10 +1,10 @@
 import useProductDetails from "../utils/useProductDetails";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { useState,useEffect } from "react";
 
 const ProductDetails = () => {
   const [res] = useProductDetails();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [isInWishlist, setIsInWishlist] = useState(false);
   const [showPopupWishlist, setShowPopupWishlist] = useState(false);
   const [isInCart, setIsInCart] = useState(false);
@@ -17,8 +17,8 @@ useEffect(() => {
   const wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
   const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
-  setIsInWishlist(wishlistItems.some(item => item.id == res?.id));
-  setIsInCart(cartItems.some(item => item.id == res?.id));
+  setIsInWishlist(wishlistItems.some(item => item.id === res?.id));
+  setIsInCart(cartItems.some(item => item.id === res?.id));
 }, [res]);
 
 
@@ -57,7 +57,7 @@ useEffect(() => {
   if (!res) return null;
   const rating = res?.rating;
   let isDiscount = true;
-  if(res?.Discount == ""){
+  if(res?.Discount === ""){
       isDiscount = false;
   }
 
