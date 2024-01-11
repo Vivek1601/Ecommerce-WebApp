@@ -25,6 +25,7 @@ cartItems.map((item) => {
   const stringWithoutCurrency = item.Price.replace(/[^0-9]/g, '');
   const integerValue = parseInt(stringWithoutCurrency, 10);
    value += integerValue;
+   return null;
 })
   return(
     <>

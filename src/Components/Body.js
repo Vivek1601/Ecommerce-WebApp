@@ -1,14 +1,13 @@
-import Filter from "./Filter";
 import Search from "./Search";
 import ProductCard from "./ProductCard";
 import useProductList from "../utils/useProductList";
-import { Link, useOutletContext } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import Shimmer from "../Components/Shimmer";
 import Pagination from "./Pagination";
 
 const Body = () => {
-    const [products, actualData, crouselCards, setProducts, isLoaded] =
+    const [products, actualData, setProducts, isLoaded] =
     useProductList();
     
 

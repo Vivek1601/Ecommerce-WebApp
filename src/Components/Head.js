@@ -1,12 +1,7 @@
 import logo from "../img/logo.png";
-import Search from "./Search";
-import Wishlist from "./Wishlist";
-import Cart from "./Cart";
-import useProductList from "../utils/useProductList";
 import { Link } from "react-router-dom";
 import cart_img from "../img/shopping_cart_FILL0_wght400_GRAD0_opsz24.png";
 import wishlist_img from "../img/favorite_FILL0_wght400_GRAD0_opsz24.png";
-import { useSelector } from "react-redux";
 import { useState,useEffect } from "react";
 import account_img from "../img/person_FILL0_wght400_GRAD0_opsz24.png";
 
@@ -55,11 +50,8 @@ import account_img from "../img/person_FILL0_wght400_GRAD0_opsz24.png";
     loginUser(email, password);
   };
 
-    // const [products, actualData, crouselCards, setProducts,isLoaded] = useProductList();
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenLogin, setIsOpenLogin] = useState(false);
-    // const cartItems = useSelector(store => store.cart.items);
-    // const wishlistItems = useSelector(store => store.wishlist.items);
 
     const openSignupModal = () => {
         setIsOpen(true);
@@ -121,10 +113,9 @@ import account_img from "../img/person_FILL0_wght400_GRAD0_opsz24.png";
             password:"",
         })
         alert("Data Stored Successfully")
-        // setIsLoggedIn(true);
+      
        }
       }else{
-        // alert("Form submission failed due to validation errors");
         <p>{formErrors}</p>
       }
       }
@@ -187,7 +178,6 @@ import account_img from "../img/person_FILL0_wght400_GRAD0_opsz24.png";
             <img src={logo} alt="NA" className="w-20 h-30 rounded-md"></img>
         </div>
         <div className="p-5 relative">
-  {/* <img src={account_img} className="w-10 h-25 rounded-md cursor-pointer" onClick={openSignupModal} alt="Account" /> */}
   {renderAccountInfo()}
   {isOpen && (
     <div>
@@ -327,17 +317,13 @@ import account_img from "../img/person_FILL0_wght400_GRAD0_opsz24.png";
 </div>
         <Link to="/wishlist">
         <div className="flex p-4">
-<img className="h-10 w-8" src={wishlist_img}></img>
-{/* <p className="font-bold">{wishlistItems.length}</p> */}
+<img className="h-10 w-8" src={wishlist_img} alt="wishlist_img"></img>
         </div>
         </Link>
         <Link to="/cart">
         <div className="flex p-4">
-        {/* <span class="material-symbols-outlined">
-shopping_cart
-</span> */}
-<img className="h-10 w-8" src={cart_img}></img>
- {/* <p className="font-bold">{cartItems.length}</p> */}
+    
+<img className="h-10 w-8" src={cart_img} alt="cart_img"></img>
         </div>
         </Link>
 

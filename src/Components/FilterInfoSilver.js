@@ -1,5 +1,3 @@
-import Filter from "./Filter";
-import Search from "./Search";
 import ProductCard from "./ProductCard";
 import useProductList from "../utils/useProductList";
 import { Link } from "react-router-dom";
@@ -7,7 +5,7 @@ import { useState } from "react";
 import Pagination from "./Pagination";
 
 const FilterInfoSilver = () => {
-    const [products, actualData, crouselCards, isLoaded,setProducts] =
+    const [products] =
     useProductList();
 
     const [currPage,setCurrPage] = useState(1);
@@ -16,7 +14,7 @@ const FilterInfoSilver = () => {
       setCurrPage(page);
     };
 
-    const filteredProducts  = products.filter((product) => product?.Details?.Metal === "Silver");
+    const filteredProducts  = products.filter((product) => product?.Details?.Metal == "Silver");
 
     const Page_Size = 6;
     const totalPages = Math.ceil(filteredProducts.length / Page_Size);

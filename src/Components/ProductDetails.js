@@ -1,13 +1,9 @@
-import { Products } from "../constant";
-import { Link } from "react-router-dom";
 import useProductDetails from "../utils/useProductDetails";
-// import { addItem } from "../utils/cartSlice";
-// import {addItemW} from "../utils/wishlistSlice";
 import { useDispatch } from "react-redux";
 import { useState,useEffect } from "react";
 
 const ProductDetails = () => {
-  const [res, isLoaded] = useProductDetails();
+  const [res] = useProductDetails();
   const dispatch = useDispatch();
   const [isInWishlist, setIsInWishlist] = useState(false);
   const [showPopupWishlist, setShowPopupWishlist] = useState(false);
@@ -21,8 +17,8 @@ useEffect(() => {
   const wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
   const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
-  setIsInWishlist(wishlistItems.some(item => item.id === res?.id));
-  setIsInCart(cartItems.some(item => item.id === res?.id));
+  setIsInWishlist(wishlistItems.some(item => item.id == res?.id));
+  setIsInCart(cartItems.some(item => item.id == res?.id));
 }, [res]);
 
 
@@ -59,7 +55,6 @@ useEffect(() => {
   }, [isInWishlist, res]);
 
   if (!res) return null;
-  // console.log(rating);
   const rating = res?.rating;
   let isDiscount = true;
   if(res?.Discount == ""){
@@ -69,7 +64,6 @@ useEffect(() => {
 
   const handleCartButton = (res) => {
     if(!isInCart){
-      // dispatch(addItem(res));
       setIsInCart(!isInCart);
       setAddToCartPopup(true);
       setTimeout(() => {
@@ -85,7 +79,6 @@ useEffect(() => {
 
   const handleWishlistButton = (res) => {
     if(!isInWishlist){
-    // dispatch(addItemW(res));
     setIsInWishlist(!isInWishlist);
     setAddToWishlistPopup(true);
       setTimeout(() => {
@@ -105,7 +98,7 @@ return (
     <>
     <div className="flex space-x-44">
       <div className="p-5 m-10 w-1/3 h-1/2 border-2 border-pink-500">
-         <img src={res?.img}></img>
+         <img src={res?.img} alt="img"></img>
       </div>
       <div className="p-8">
         <p className="font-bold text-3xl">{res?.name}</p>

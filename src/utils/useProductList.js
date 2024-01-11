@@ -19,6 +19,6 @@ const useProductList = () => {
 
 
 
-  return [products, actualData, crouselCards, setProducts,isLoaded];
+  return [products, actualData, setProducts,isLoaded];
 };
 export default useProductList;

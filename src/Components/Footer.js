@@ -6,7 +6,7 @@ import iciciLogo from "../img/ICICI-Logo-iyd.jpg";
 
 const Footer = () => {
     return ( 
-        // relative bottom-0 left-0 w-full
+
         <div className="p-4 bg-pink-100">
     
             <div className="flex">
@@ -16,11 +16,11 @@ const Footer = () => {
             <div>
             <p className="pb-2 text-2xl">Payment Options available :-</p>
             <div className="pb-2 flex justify-evenly h-20 w-100">
-            <img src={upiLogo}></img>
-            <img src={masterCardLogo}></img>
-            <img src={visaLogo}></img>
-            <img src={hdfcLogo}></img>
-            <img src={iciciLogo}></img>
+            <img src={upiLogo} alt="payment_methods"></img>
+            <img src={masterCardLogo} alt = "payment_methods"></img>
+            <img src={visaLogo} alt = "payment_methods"></img>
+            <img src={hdfcLogo} alt = "payment_methods"></img>
+            <img src={iciciLogo} alt = "payment_methods"></img>
             </div>
             </div>
           

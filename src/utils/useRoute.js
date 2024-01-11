@@ -5,8 +5,6 @@ import Cart from "../Components/Cart";
 import AppLayout from "../Components/AppLayout";
 import Wishlist from "../Components/Wishlist";
 import ProductDetails from "../Components/ProductDetails";
-// import FilterInfoGold from "../Components/FilterInfoGold";
-// import FilterInfoSilver from "../Components/FilterInfoSilver";
 import Account from "../Components/Account";
 import {lazy,Suspense } from "react";
 import Shimmer from "../Components/Shimmer";
