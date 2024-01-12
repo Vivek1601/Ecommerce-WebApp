@@ -11,7 +11,7 @@ const useProductList = () => {
   useEffect(() => {
     setIsLoaded(false);
         setProducts(Products);
-      setCrouselCards(Products);
+      // setCrouselCards(Products);
       setIsLoaded(true);
       setActualData(Products);
       // console.log(products);
