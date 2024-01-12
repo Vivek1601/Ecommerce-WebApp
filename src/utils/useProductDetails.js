@@ -7,17 +7,21 @@ const useProductDetails = () => {
     const [res, setRes] = useState({});
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
-        getProductInfo();
-    }, []);
+      const getProductInfo = async () => {
+        const data = Products[prId - 1];
+        // const json = await data.json();
+        // setRes(json?.data);
+        setRes(data);
+        setIsLoaded(true);
+      };
   
-    async function getProductInfo() {
-      const data =  Products[prId-1]
-    //   const json = await data.json();
-    // setRes(json?.data);
-      setRes(data);
-      setIsLoaded(true);
-    }
+      // Include getProductInfo in the dependency array
+      getProductInfo();
+  
+    }, [prId]); // <-- Include prId as a dependency
+  
     return [res, isLoaded];
-}
+  };
+  
 
     export default useProductDetails;
